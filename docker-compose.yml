@@ -1,0 +1,16 @@
+version: "3"
+name: "morele_net_php_dev_test"
+
+services:
+  php:
+    container_name: morele_php82
+    build: docker/php
+    restart: always
+    networks:
+      - morele_net_php_dev_network
+    volumes:
+      - ./:/app
+
+networks:
+  morele_net_php_dev_network:
+    name: morele_net_php_dev_network
